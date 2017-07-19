@@ -26,11 +26,17 @@ public class FindPermutations {
 		if(!newString.equals(input)){
 			permList.add(newString);
 			
-			if(permList.size() != 6) //6 = factorial of s.length()
+			if(permList.size() != factorial(3))
 				findPerm(newString);
 		} else{
 			findPerm(String.valueOf(input.charAt(1)) + String.valueOf(input.charAt(0)) + input.substring(2, input.length()));
 		}
+	}
+	
+	public static int factorial(int i){
+		if(i == 0)
+			return 1;
+		return i*factorial(i-1);
 	}
 
 }
